@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RegistrationForm</title>
+</head>
+<body style="background-image: url('Friend.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <header>
+        <h1 style="text-align: center;">FRIENDSHIP ZONE</h1>
+    </header>
+
+    <article>
+        <h2>Register Yourself</h2>
+
+        <!-- Single Form -->
+        <form id="registrationForm" method="get">
+            <label for="Name">Name:</label><br>
+            <input type="text" id="Name" name="Name" required><br><br>
+
+            <label for="email_id">Email ID:</label><br>
+            <input type="email" id="email_id" name="email" required><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="M">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="F">
+            <label for="female">Female</label><br><br>
+
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label for="phone_no">Phone Number:</label><br>
+            <input type="text" id="phone_no" name="phone" required><br><br>
+
+            <label for="country">Country:</label><br>
+            <select id="country" name="country" required>
+                <option value="">Select your country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Canada">Canada</option>
+                <option value="Belgium">Belgium</option>
+                <option value="France">France</option>
+            </select><br><br>
+
+            <label>Languages Known:</label><br>
+            <input type="checkbox" id="english" name="language" value="English" checked>
+            <label for="english">English</label>
+            <input type="checkbox" id="hindi" name="language" value="Hindi">
+            <label for="hindi">Hindi</label>
+            <input type="checkbox" id="marathi" name="language" value="Marathi">
+            <label for="marathi">Marathi</label><br><br>
+
+            <label for="pic">Profile Picture:</label><br>
+            <input type="file" id="pic" name="pic" required><br><br>
+
+            <label for="yourself">About Yourself:</label><br>
+            <textarea id="yourself" name="about" rows="4" cols="50"></textarea><br><br>
+
+            <label>Interested In:</label><br>
+            <input type="radio" id="Friendship" name="interested" value="F">
+            <label for="Friendship">Friendship</label>
+            <input type="radio" id="Dating" name="interested" value="D">
+            <label for="Dating">Dating</label><br><br>
+
+            <!-- Buttons with different submission targets -->
+            <input type="submit" value="Register as User" onclick="submitForm('RegistrationConfirmation.html')">
+            <input type="submit" value="Register as Admin" onclick="submitForm('RegistrationConfirmationforAdmin.html')">
+        </form>
+    </article>
+
+    <footer>
+        <nav></nav>
+    </footer>
+
+    <!-- Script to handle dynamic form action -->
+    <script>
+        function submitForm(actionURL) {
+            const form = document.getElementById('registrationForm');
+            form.action = actionURL;
+        }
+    </script>
+</body>
+</html>
